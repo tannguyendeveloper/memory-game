@@ -284,7 +284,7 @@ class MemoryGame {
     // remove the gameboard
     document.querySelector(`#${this.id} #game-board`).remove();
     // remove the best score 
-    document.querySelector(`#${this.id} #best-score`).remove();
+    if(!!document.querySelector(`#${this.id} #best-score`)) document.querySelector(`#${this.id} #best-score`).remove();
     // remove the restart button 
     document.querySelector(`#${this.id} #reset-button`).remove();
   }
