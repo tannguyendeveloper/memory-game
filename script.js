@@ -178,17 +178,17 @@ class MemoryGame {
     this.renderBestScore();
     
     // render retry button
-    this.renderresetButton();
+    this.renderResetButton();
     
     this.startTimer();
 
   }
 
   startTimer() {
-    this.timer = 0;
+    this.time = 0;
     const game = this;
     this.timer = setInterval( function() {
-      game.updateTimer(game.timer++);
+      game.updateTimer(game.time++);
     },    
     1000)
   }
@@ -247,7 +247,7 @@ class MemoryGame {
     document.querySelector(`#${this.id} #game-title`).style.display = 'none';
 
     const winningScore = {
-      time: this.timer,
+      time: this.time,
       guesses: this.guesses
     }
 
@@ -259,7 +259,7 @@ class MemoryGame {
     if(!prevBestScore) { 
       messageContainer.innerHTML = `<h1 id="winner-headline">High Score!</h1>`;
       localStorage.setItem('bestScore', JSON.stringify(winningScore))
-    } else if(this.timer < parseInt(prevBestScore.time) && this.guesses < parseInt(prevBestScore.guesses)) {
+    } else if(this.time < parseInt(prevBestScore.time) && this.guesses < parseInt(prevBestScore.guesses)) {
       messageContainer.innerHTML = `<h1 id="winner-headline">High Score!</h1>`;
       localStorage.setItem('bestScore', JSON.stringify(winningScore))
     } else {
@@ -267,7 +267,7 @@ class MemoryGame {
     }
     const message = document.createElement('p');
     message.id = 'winner-message';
-    message.innerText = `You won with a time of ${this.timer} seconds and ${this.guesses} guesses!`;
+    message.innerText = `You won with a time of ${this.time} seconds and ${this.guesses} guesses!`;
     messageContainer.append(message);
     messageContainer.append(this.retryButton());
 
@@ -318,7 +318,7 @@ class MemoryGame {
     return resetButton;
   }
 
-  renderresetButton() {
+  renderResetButton() {
     document.querySelector(`#${this.id} .container`).append(this.resetButton());
   }
 
