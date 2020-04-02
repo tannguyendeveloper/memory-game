@@ -24,6 +24,7 @@ body {
 .container {
   width: 100%;
   max-width: 80vh;
+  padding: .5rem;
 }
 
 h1 {
@@ -40,7 +41,7 @@ h1 {
 }
 
 #start-button, #retry-button, #reset-button {
-  font-size: 1.5em;
+  font-size: 1.25em;
   border: 2px solid #ffffff;
   color: #ffffff;
   background: transparent;
@@ -118,4 +119,51 @@ h1 {
   text-align: center;
   color: #ffffff;
   font-size: 1.5rem;
+}
+
+/*  Media Queries */
+
+@media only screen and (max-width: 320px) {
+
+  h1#game-title {
+    font-size: 2rem;
+  }
+
+  button#start-button {
+    font-size: 1rem;
+  }
+
+  #start-button, #retry-button, #reset-button {
+    font-size: 1rem;
+    padding: .375rem 1rem;
+  }
+
+  #score-board, #best-score {
+    font-size: .85rem;
+  }
+
+
+  .container {
+    padding: 0 .25em;
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+  h1#game-title {
+    font-size: 2.5rem;
+  }
+
+  #start-button, #retry-button, #reset-button {
+    font-size: 1.25rem;
+  }
+
+  #score-board, #best-score {
+    font-size: 1.25rem;
+    padding: .5rem 1.5rem;
+  }
+
+  .container {
+    padding: 0 .5em;
+  }
+
 }

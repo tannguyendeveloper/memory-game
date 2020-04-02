@@ -157,7 +157,7 @@ class MemoryGame {
     
     document.querySelector('.guesses span').innerText = this.guesses;
 
-    // set the number of matches remaining to the numebr of colors
+    // set the number of matches remaining to the number of colors
     this.remainingMatches = this.colors.length;
     document.querySelector('.matches-remaining span').innerText = this.remainingMatches;
 
