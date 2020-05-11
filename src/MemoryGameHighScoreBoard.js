@@ -23,7 +23,7 @@ export default class MemoryGameHighScoreBoard {
 
         const bestTime = document.createElement('div');
         bestTime.classList.add('best-time');
-        bestTime.innerHTML = `Best Time: <span>${prevScore ? prevScore.time : '---'}</span>`;
+        bestTime.innerHTML = `Best Time: <span>${prevScore ? moment.duration(prevScore.time, "seconds").format() : '---'}</span>`;
     
         const bestGuesses = document.createElement('div');
         bestGuesses.classList.add('best-guesses');

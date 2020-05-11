@@ -124,7 +124,7 @@ class MemoryGame {
         winnerTitle.innerText = "New High Score!"
         
         const winnerText = document.createElement('p');
-        winnerText.innerText = `You won with a time of ${this.time} seconds and ${this.guesses} guesses!`;
+        winnerText.innerText = `You won with a time of ${moment.duration(this.time, "seconds").format()} and ${this.guesses} guesses!`;
 
         if(!prevBestScore) {
             this.highScoreBoard.setBestScore(score);

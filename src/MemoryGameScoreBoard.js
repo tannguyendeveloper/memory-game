@@ -8,7 +8,7 @@ export default class MemoryGameScoreBoard {
     }
     updateTimer(time) {
         const container = document.querySelector('#score-board .timer span');
-        container.innerHTML = time;
+        container.innerHTML = moment.duration(time, "seconds").format();
     }
     updateMatchesRemaining(matches) {
         const container = document.querySelector('#score-board .matches span');
