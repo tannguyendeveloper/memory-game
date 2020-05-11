@@ -3,48 +3,52 @@ window.addEventListener('load', async function () {
   Game.init();
 })
 
+const colors = [{
+  
+}]
+
 class MemoryGame {
   constructor(id) {
     this.id = id;
     this.colors = [{
         color: 'purple',
-        hex: '#68217a'
+        hex: '#8b6dff'
       },
       {
         color: 'magenta',
-        hex: '#ec008c'
+        hex: '#df6dff'
+      },
+      {
+        color: 'pink',
+        hex: '#df6dff'
       },
       {
         color: 'red',
-        hex: '#e81123'
+        hex: '#ff7670'
       },
       {
         color: 'orange',
-        hex: '#ff8c00'
+        hex: '#ffc16c'
       },
       {
-        color: 'yellow',
-        hex: '#fff100'
+        color: 'lemon',
+        hex: '#ffc16c'
       },
       {
         color: 'lime',
-        hex: '#bad80a'
+        hex: '#9dff86'
       },
       {
         color: 'green',
-        hex: '#009e49'
-      },
-      {
-        color: 'teal',
-        hex: '#00b294'
+        hex: '#6dffac'
       },
       {
         color: 'cyan',
-        hex: '#00bcf2'
+        hex: '#6bffff'
       },
       {
         color: 'blue',
-        hex: '#00188f'
+        hex: '#6eaaff'
       },
     ]
 
@@ -92,34 +96,13 @@ class MemoryGame {
     return true;
   }
 
-  // animate the headline
+  // animate the headline\
   animateText(el) {
     const colors = this.colors;
     const chars = document.querySelector(el);
     const splitChars = chars.innerText.split('');
     chars.innerText = '';
 
-    // wrap each character with span except empty spaces
-    for (let char of splitChars) {
-      if (char != ' ') {
-        let span = document.createElement('span');
-        span.innerText = char;
-        chars.append(span);
-      } else {
-        chars.append(char);
-      }
-    }
-
-    const titleChars = chars.querySelectorAll(`span`);
-    let i = 0;
-    let animateColor = setInterval(
-      function () {
-        titleChars[i].classList.toggle(colors[i].color);
-        i++
-        if (i === titleChars.length) {
-          clearInterval(animateColor);
-        }
-      }, 50)
   }
 
   renderStartButton() {
@@ -267,7 +250,7 @@ class MemoryGame {
     }
     const message = document.createElement('p');
     message.id = 'winner-message';
-    message.innerText = `You won with a time of ${this.time} seconds and ${this.guesses} guesses!`;
+    message.innerText = ``;
     messageContainer.append(message);
     messageContainer.append(this.retryButton());
 

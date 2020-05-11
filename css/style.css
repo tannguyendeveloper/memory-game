@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+  background: rgb(254,255,241);
+  background: radial-gradient(circle, rgba(254,255,241,1) 10%, rgba(255,250,175,1) 90%);
+  padding: 0 0;
+  margin: 0 0;
+}
+
+.game-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.game-container {
+  width: 100%;
+  max-width: 80vh;
+  padding: .5rem;
+}
+
+.animated span {
+  display: inline-block;
+  animation-duration: 200ms;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.purple {
+  color: #8b6dff
+}
+.magenta {
+  color: #df6dff;
+}
+.pink {
+  color: #ff6bc7;
+}
+.red {
+  color: #ff7670;
+}
+.orange {
+  color: #ffc16c;
+}
+.lemon {
+  color: #ddff6c;
+}
+.lime {
+  color: #9dff6c;
+}
+.green {
+  color: #3dffac;
+}
+.cyan {
+  color: #6bffff;
+}
+.blue {
+  color: #6eaaff;
+}
+
+#score-board, #high-score-board {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+#score-board span, #high-score-board span {
+  /* background-color: #ffffff; */
+  padding: .25em;
+  display: inline-block;
+  position: relative;
+  background-color: #ffffff;
+  clip-path: polygon(0 0%, 100% 10%, 100% 90%, 0% 100%);
+}
+
+#game-container {
+  width: 100%;
+}
+
+#game-title * {
+  transition-duration: 150ms;
+  text-shadow: 1px 1px 0px rgba(0,0,0,.2)
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+  color: #cdcdcd;
+  font-size: 3rem;
+  margin: 0;
+}
+
+#start-game-button, #reset-game-btn, #retry-game-button {
+  font-size: 1.25em;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+  margin: .5em auto;
+  padding: .5rem 2rem;
+  border: none;
+  outline: 0;
+  background-color: rgba(255,193,108,.75);
+  color: #ffffff;
+}
+
+#start-game-button:hover, #reset-game-btn:hover, #retry-game-button:hover {
+  animation-iteration-count: 1;
+  transform: translateY(-2px);
+  transition-duration: 50ms;
+  cursor: pointer;
+  background-color: rgba(255,193,108,1);
+  color: #ffffff;
+  box-shadow: 0px 3px 3px rgba(0,0,0,.1);
+}
+
+
+#game-board {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card-container {
+  width: 18%;
+  margin-bottom: 2%;
+  padding: 3px;
+  box-sizing: border-box;
+  background-color: rgba(255,255,255,1);
+}
+
+.card-color {
+  width: 100%;
+  padding-bottom: 100%;
+}
+
+#game-board .card-container.active {
+  background-color: #ffffff;
+}
+
+#game-board .card-container.active:hover {
+  animation-iteration-count: 1;
+  transform: translateY(-7px);
+  transition-duration: 50ms;
+  box-shadow: 0px 3px 3px rgba(0,0,0,.1);
+  cursor: pointer;
+}
+
+#game-board .card-container.selected {
+  box-shadow: 0px 5px 10px rgba(0,0,0,.25);
+  transform: translateY(-7px);
+  cursor: pointer;
+}
+
+#winner-message {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.github-link {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: rgba(0,0,0,.75);
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.modal-container {
+  text-align: center;
+}
+
+.modal-container p {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+/*  Media Queries */
+
+@media only screen and (max-width: 320px) {
+
+  h1#game-title {
+    font-size: 2rem;
+  }
+
+  button#start-button {
+    font-size: 1rem;
+  }
+
+  #start-game-button, #reset-game-button {
+    font-size: 1rem;
+    padding: .375rem 1rem;
+  }
+
+  #score-board, #best-score {
+    font-size: .85rem;
+  }
+
+  .container {
+    padding: 0 .25em;
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+  h1#game-title {
+    font-size: 2.5rem;
+  }
+
+  #start-game-button, #retry-game-button, #reset-game-button {
+    font-size: 1.25rem;
+  }
+
+  #score-board, #best-score {
+    font-size: 1.25rem;
+    padding: .5rem 1.5rem;
+  }
+
+  .container {
+    padding: 0 .5em;
+  }
+
+}
