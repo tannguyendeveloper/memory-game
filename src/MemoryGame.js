@@ -60,7 +60,8 @@ class MemoryGame {
 
     setNewGameDefaults() {
         this.time = 0;
-        this.scoreBoard.updateTimer(this.time);
+        
+        this.scoreBoard.updateTimer(moment.duration(this.time, "seconds").format());
         this.startTimer();
     
         this.matchesRemaining = MemoryGameUI.colors.length;
@@ -94,7 +95,7 @@ class MemoryGame {
     startTimer() {
         this.timer = setInterval(
             () => {
-                this.scoreBoard.updateTimer(this.time);
+                this.scoreBoard.updateTimer(moment.duration(this.time, "seconds").format());
                 this.time++;
             }
         , 1000)
