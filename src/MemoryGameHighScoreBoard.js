@@ -5,7 +5,7 @@ export default class MemoryGameHighScoreBoard {
     setBestScore(score) {
         localStorage.setItem('bestScore', JSON.stringify(score))
         this.updateGuesses(score.guesses);
-        this.updateGuesses(score.time);
+        this.updateBestTime(score.time);
     }
     updateGuesses(guesses) {
         const bestGuessesContainer = document.querySelector('.best-guesses span');
@@ -29,7 +29,6 @@ export default class MemoryGameHighScoreBoard {
         bestGuesses.classList.add('best-guesses');
         bestGuesses.innerHTML = `Number of Guesses: <span>${prevScore ? prevScore.guesses : '---'}</span>`;
   
-
         highScoreContainer.append(bestTime, bestGuesses);
         return highScoreContainer;
       }
